@@ -1,0 +1,127 @@
+@use '../base' as *;
+
+.hero {
+	// Display & layout
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&-container {
+		// Sizing & spacing
+		min-height: 100vh;
+		max-width: 100%;
+
+		// Display & alignment
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: 420px) {
+			margin-top: 10vh;
+			justify-content: flex-start;
+		}
+
+		&__background {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+
+		&__text-container {
+			// Effects
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+
+			// Sizing
+			width: 80%;
+			max-width: 80%;
+
+			// Overflow handling
+			overflow: hidden;
+
+			// Display & alignment
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@media (max-width: 420px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+			}
+
+			.heading {
+				// Display & layout
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+
+				// Typography
+				font-size: 6.2rem;
+				letter-spacing: 1rem;
+				line-height: 1.6;
+
+				// Spacing
+				margin-left: 14rem;
+
+				@media (max-width: 1320px) {
+					font-size: 5.2rem;
+					letter-spacing: 0.8rem;
+					margin-left: 10rem;
+				}
+
+				@media (max-width: 1070px) {
+					font-size: 4.2rem;
+					letter-spacing: 0.6rem;
+					margin-left: 6rem;
+				}
+
+				@media (max-width: 840px) and (orientation: landscape) {
+					margin-top: 0rem;
+					font-size: 2rem;
+					letter-spacing: 0.5rem;
+					margin-left: 4rem;
+				}
+				@media (max-width: 420px) {
+					justify-content: left;
+					font-size: 3rem;
+					line-height: 1.6;
+					letter-spacing: 0.4rem;
+					margin-left: 0;
+				}
+
+				.letter {
+					// Effects
+					opacity: 0;
+					animation: fadeIn 1000ms forwards;
+
+					// Color
+					color: $primary-color;
+
+					// Interaction
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+// Keyframes for the letter animation
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

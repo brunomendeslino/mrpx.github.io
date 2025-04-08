@@ -1,0 +1,50 @@
+// _breakpoints.scss
+
+// --------------------------------------------------
+// Breakpoint Variables
+// --------------------------------------------------
+// Define breakpoints for various device sizes.
+// Adjust these values to suit your project's design.
+$breakpoint-xxs: 320px; // Extra extra small devices (e.g., phones)
+$breakpoint-xs: 480px;  // Extra small devices (e.g., phones)
+$breakpoint-sm: 768px;  // Small devices (e.g., tablets)
+$breakpoint-md: 992px;  // Medium devices (e.g., small laptops)
+$breakpoint-lg: 1200px; // Large devices (e.g., desktops)
+$breakpoint-xl: 1400px; // Extra large devices (e.g., large desktops)
+
+// --------------------------------------------------
+// Media Query Mixin
+// --------------------------------------------------
+// Use this mixin to apply styles at different breakpoints.
+// Example usage:
+//   .container {
+//     width: 100%;
+//     @include respond-to('sm') {
+//       width: 90%;
+//     }
+//   }
+@mixin respond-to($size) {
+  @if $size == 'xs' {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $size == 'sm' {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $size == 'md' {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $size == 'lg' {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $size == 'xl' {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}`. Please use one of: 'xs', 'sm', 'md', 'lg', 'xl'.";
+  }
+}

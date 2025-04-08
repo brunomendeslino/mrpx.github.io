@@ -1,0 +1,91 @@
+@use '../base/' as *;
+@use '../abstracts/' as *;
+
+.navbar {
+	background-color: transparent;
+	transition: background-color 0.3s ease;
+	z-index: 1000;
+	&.active {
+	}
+
+	.container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.navbar__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.navbar__menu {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+		transition: transform 0.3s ease;
+
+		@media (max-width: 500px) {
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+			min-height: 100vh;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.9);
+			transform: translateY(-100%);
+			visibility: hidden;
+			opacity: 0;
+			transition: transform 0.3s ease, opacity 0.3s ease;
+		}
+
+		&.active {
+			transform: translateY(0);
+			visibility: visible;
+			opacity: 1;
+		}
+
+		li {
+			padding: 0.5rem 1rem;
+			cursor: pointer;
+			font-size: 1.6rem;
+			color: $primary-color;
+			transition: color 0.3s ease;
+
+			@media (max-width: 500px) {
+				font-size: 2.8rem;
+			}
+
+			&:hover {
+				color: $primary-text-color;
+			}
+			.active {
+				color: $secondary-color;
+			}
+		}
+	}
+
+	.nav__hamburguer {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+
+		@media (max-width: 500px) {
+			display: block;
+			cursor: pointer;
+		}
+        .button {
+	a {
+		position: absolute;
+		top: 3rem;
+		right: 2rem;
+	}
+}
+	}
+}
+

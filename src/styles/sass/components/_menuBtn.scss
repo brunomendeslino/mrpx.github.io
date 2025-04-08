@@ -1,0 +1,141 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+// Icon
+.hamburger-icon {
+  // Sizing & Positioning
+  scale: 1.3;
+  height: 30px;
+  position: fixed;
+  top: 1.6rem;
+  right: 1.6rem;
+  
+  span {
+    // Appearance
+    @include rounded(3px);
+    background-color: $primary-color;
+    
+    // Display
+    display: block;
+    
+    // Sizing & Spacing
+    height: 4px;
+    width: 30px;
+    margin: 0 auto;
+    
+    // Positioning
+
+    
+    &:before {
+      // Appearance
+      @include rounded(3px);
+      background-color: $primary-color;
+      content: '';
+      
+      // Display
+      display: block;
+      
+      // Sizing & Spacing
+      height: 4px;
+      width: 30px;
+      margin-top: -9px;
+      
+      // Positioning
+      position: absolute;
+    }
+    
+    &:after {
+      // Appearance
+      @include rounded(3px);
+      background-color: $primary-color;
+      content: '';
+      
+      // Display
+      display: block;
+      
+      // Sizing & Spacing
+      height: 4px;
+      width: 30px;
+      margin-top: 9px;
+      
+      // Positioning
+      position: absolute;
+    }
+  }
+}
+
+// Animation
+.cross-animation {
+  span {
+    // Transition Timing
+    -webkit-transition-delay: 0.2s;
+    -webkit-transition-duration: 0s;
+    transition-delay: 0.2s;
+    transition-duration: 0s;
+    
+    &:before {
+      // Transition Timing & Properties for before pseudo-element
+      -webkit-transition-delay: 0.2s, 0s;
+      -webkit-transition-duration: 0.2s;
+      -webkit-transition-property: margin, -webkit-transform;
+      transition-delay: 0.2s, 0s;
+      transition-duration: 0.2s;
+      transition-property: margin, transform;
+    }
+    
+    &:after {
+      // Transition Timing & Properties for after pseudo-element
+      -webkit-transition-delay: 0.2s, 0s;
+      -webkit-transition-duration: 0.2s;
+      -webkit-transition-property: margin, -webkit-transform;
+      transition-delay: 0.2s, 0s;
+      transition-duration: 0.2s;
+      transition-property: margin, transform;
+    }
+  }
+  
+  &:hover {
+    span {
+      &:before {
+        // Hover Effect
+        margin-top: -12px;
+      }
+      
+      &:after {
+        // Hover Effect
+        margin-top: 12px;
+      }
+    }
+  }
+  
+  &.open {
+    span {
+      // Transition Adjustments & Appearance on Open State
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+      background-color: rgba(0, 0, 0, 0);
+      
+      &:before {
+        // Transformation & Transition for before pseudo-element on Open State
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        
+        -webkit-transition-delay: 0s, 0.2s;
+        transition-delay: 0s, 0.2s;
+        
+        margin-top: 0;
+      }
+      
+      &:after {
+        // Transformation & Transition for after pseudo-element on Open State
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        
+        -webkit-transition-delay: 0s, 0.2s;
+        transition-delay: 0s, 0.2s;
+        
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@mixin rounded($radius: 2px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+
+
+
+
+
+@mixin menuSlide {
+	animation: menuSlide 550ms ease-in-out;
+	@keyframes menuSlide {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+}
+
+@mixin menuSlideReverse {
+	animation: menuSlideReverse 300ms ease-in-out;
+	background-color: red;
+	@keyframes menuSlideReverse {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+}
+
+

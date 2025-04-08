@@ -1,0 +1,83 @@
+@use '../base' as *;
+
+// Main container for the about section
+.about {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+// Container that holds image and text sections
+.about-container {
+	margin-top:10rem;
+	max-width: 1200px;
+	min-height: 120vh;
+	z-index: -1;
+	
+	
+	// Flexbox properties
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:5rem;
+
+	@media (max-width: 720px) and (orientation: landscape) {
+		margin-top: 25rem;
+		margin-bottom: 10rem;
+	}
+
+	// Common styles for both containers to remain square
+	&__img-container,
+	&__text-container {
+		// Flexbox properties
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__img-container {
+		max-width: 100%;
+		overflow: hidden;
+
+		@media (max-width: 420px) {
+			margin-top: 25rem;
+		}
+	}
+
+	img {
+		width: 90%;
+		max-width: 400px;
+
+		@media (max-width: 720px) and (orientation: landscape) {
+			max-width: 180px;
+		}
+	}
+
+	&__text-container {
+		width: 90%;
+		color: white;
+		padding-top: 2rem;
+		overflow: hidden;
+		flex-direction: column;
+
+		h2 {
+			text-align: left;
+			font-size: 2.6rem;
+
+			@media (max-width: 720px) and (orientation: landscape) {
+				font-size: 1.6rem;
+			}
+		}
+
+		p {
+			text-align: justify;
+			font-size: 1.8rem;
+
+			@media (max-width: 720px) and (orientation: landscape) {
+				font-size: 0.9rem;
+			}
+		}
+	}
+}

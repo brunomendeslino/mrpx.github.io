@@ -1,0 +1,47 @@
+[
+	{
+		"video": "../assets/videos/Video_1.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_1.png",
+		"text": "Description for Video 1"
+	},
+	{
+		"video": "../assets/videos/Video_2.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_2.png",
+		"text": "Description for Video 2"
+	},
+	{
+		"video": "../assets/videos/Video_3.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_3.png",
+		"text": "Description for Video 3"
+	},
+	{
+		"video": "../assets/videos/Video_4.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_4.png",
+		"text": "Description for Video 4"
+	},
+	{
+		"video": "../assets/videos/Video_5.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_5.png",
+		"text": "Description for Video 5"
+	},
+	{
+		"video": "../assets/videos/Video_6.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_6.png",
+		"text": "Description for Video 6"
+	},
+	{
+		"video": "../assets/videos/Video_7.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_7.png",
+		"text": "Description for Video 7"
+	},
+	{
+		"video": "../assets/videos/Video_8.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_8.png",
+		"text": "Description for Video 8"
+	},
+	{
+		"video": "../assets/videos/Video_9.webm",
+		"thumbnail": "../assets/thumbnails/Thumbnail_9.png",
+		"text": "Description for Video 9"
+	}
+]
